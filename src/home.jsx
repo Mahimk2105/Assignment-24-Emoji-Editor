@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 
 const emojis = [
-  "😀", "😎", "😍", "🤔", "😭", "😡", "🥳", "🤩", "😚", "🎈", "🚀", "🌟", "👍","🌙","🌈"];
+  "😀", "😎", "😍", "🤔", "😭", "😡", "🥳", "🤩", "😚", "🎈", "🚀", "🌟", "👍","🌙","🌈"
+];
 
 const bgColors = [
   "bg-white", "bg-yellow-100", "bg-pink-100",
   "bg-blue-100", "bg-green-100", "bg-gray-200", "bg-red-100"
 ];
-
 
 const getRandomRotation = () =>
   Math.random() > 0.5 ? "hover:rotate-6" : "hover:-rotate-6";
@@ -20,11 +20,9 @@ export default function App() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-purple-200 to-blue-200 p-6">
       <h1 className="text-4xl font-extrabold mb-6 text-gray-800 drop-shadow-lg">
-         Moodify 💫🙂‍↔️ 
+         Moodify 💫🙂‍↔️  
       </h1>
-    
 
- 
       <div
         className={`${bg} rounded-2xl flex items-center justify-center shadow-xl border transition-transform hover:scale-105`}
         style={{ width: size + 60, height: size + 60 }}
@@ -32,28 +30,27 @@ export default function App() {
         <span style={{ fontSize: size }}>{emoji}</span>
       </div>
 
-  
       <h2 className="mt-8 text-xl font-semibold text-gray-700">Pick an Emoji</h2>
-      <div className="mt-4 grid grid-cols-4 gap-4 max-w-md">
+      <div className="mt-4 grid grid-cols-5 gap-3 max-w-md">
         {emojis.map((e, index) => (
+
           <div
             key={index}
             onClick={() => setEmoji(e)}
-            className={`bg-white p-6 rounded-xl shadow-md flex items-center justify-center text-4xl cursor-pointer transition-transform hover:scale-110 hover:shadow-2xl ${getRandomRotation()}`}
+            className={`bg-white p-3 rounded-lg shadow-md flex items-center justify-center text-2xl cursor-pointer transition-transform hover:scale-110 hover:shadow-xl border-2 ${getRandomRotation()}`}
           >
             {e}
           </div>
         ))}
       </div>
 
-    
       <h2 className="mt-8 text-xl font-semibold text-gray-700">Background</h2>
       <div className="mt-4 flex gap-3 flex-wrap justify-center">
         {bgColors.map((color) => (
           <button
             key={color}
             onClick={() => setBg(color)}
-            className={`${color} w-10 h-10 rounded-full border shadow hover:scale-110 transition-transform`}
+            className={`${color} w-8 h-8 rounded-full border shadow hover:scale-110 transition-transform`}
           />
         ))}
       </div>
