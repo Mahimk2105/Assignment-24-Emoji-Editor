@@ -5,8 +5,19 @@ const emojis = [
 ];
 
 const bgColors = [
-  "bg-white", "bg-yellow-100", "bg-pink-100",
-  "bg-blue-100", "bg-green-100", "bg-gray-200", "bg-red-100"
+  "bg-gradient-to-br from-pink-200 to-yellow-200",
+  "bg-gradient-to-br from-blue-200 to-purple-200",
+  "bg-gradient-to-br from-green-200 to-teal-100",
+  "bg-gradient-to-br from-gray-200 to-gray-400",
+  "bg-gradient-to-br from-red-200 to-pink-300",
+  "bg-gradient-to-br from-yellow-200 to-green-200"
+];
+const sizes = [
+  "w-32 h-32",
+  "w-40 h-40",
+  "w-48 h-48",
+  "w-56 h-56",
+  "w-64 h-64"
 ];
 
 const getRandomRotation = () =>
@@ -37,7 +48,7 @@ export default function App() {
           <div
             key={index}
             onClick={() => setEmoji(e)}
-            className={`bg-white p-3 rounded-lg shadow-md flex items-center justify-center text-2xl cursor-pointer transition-transform hover:scale-110 hover:shadow-xl border-2 ${getRandomRotation()}`}
+            className={`bg-white p-3 rounded-lg shadow-md flex items-center justify-center text-2xl cursor-pointer transition-transform hover:scale-125 hover:-translate-y-1 hover:shadow-xl ${getRandomRotation()}`}
           >
             {e}
           </div>
@@ -55,7 +66,7 @@ export default function App() {
         ))}
       </div>
 
-      <h2 className="mt-8 text-xl font-semibold text-gray-700">Size</h2>
+      <h2 className="mt-8 pt-3 text-xl font-semibold text-gray-700">Size</h2>
       <div className="mt-8 flex items-center gap-3">
         <label className="text-lg font-medium">Size:</label>
         <input
